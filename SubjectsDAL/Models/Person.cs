@@ -32,7 +32,7 @@ namespace SubjectsDAL.Models
 
         public override string ToString()
         {
-            return $"({GetType().Name}) {FullName} {TimeAdded}";
+            return $"({GetType().Name}) {FullName} added {TimeAdded}. Subject Id: {SubjectId}";
         }
     }
 }
