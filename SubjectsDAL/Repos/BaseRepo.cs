@@ -43,8 +43,32 @@ namespace SubjectsDAL.Repos
             }
         }
 
-        public T GetOne(int id) => table.Find(id);
+        public T GetOne(int? id) => table.Find(id);
 
+        public List<T> GetAll() => table.ToList();
 
+        public int Add(T entity)
+        {
+            table.Add(entity);
+            return SaveChanges();
+        }
+
+        public int AddRange(List<T> entities)
+        {
+            table.AddRange(entities);
+            return SaveChanges();
+        }
+
+        public int Delete(T entity)
+        {
+            context.Entry(entity).State = EntityState.Deleted;
+            return SaveChanges();
+        }
+
+        public int Save(T entity)
+        {
+            context.Entry(entity).State = EntityState.Modified;
+            return SaveChanges();
+        }
     }
 }
