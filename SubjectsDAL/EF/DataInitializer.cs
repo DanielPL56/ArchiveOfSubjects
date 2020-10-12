@@ -14,8 +14,8 @@ namespace SubjectsDAL.EF
         {
             List<Human> humans = new List<Human>()
             {
-                new Human() { FirstName = "Daniel", LastName = "Woelk" },
-                new Human() { FirstName = "Mariusz", LastName = "Woelk" }
+                new Human() { FirstName = "Marian", LastName = "Pazdzioch" },
+                new Human() { FirstName = "Ferdek", LastName = "Kiepski" }
             };
 
             humans.ForEach(x => context.Humans.Add(x));

@@ -30,7 +30,7 @@ namespace LittleDatabaseApp
 
         private static void DisplayMenu()
         {
-            Console.WriteLine($"Choose option\n1) Add Person\n2) Show peoples in memory\n3) Add people to database\n4) Database\n5) Exit App");
+            Console.WriteLine($"Choose option\n1) Add Person\n2) Show peoples in memory\n3) Add people to database\n4) Show database records\n5) Exit App");
 
             string userInput = Console.ReadLine();
 
@@ -170,7 +170,7 @@ namespace LittleDatabaseApp
                 {
                     foreach (Human human in humanRepository.GetAll())
                     {
-                        Console.WriteLine(human.ToString());
+                        Console.WriteLine($"{human.ToString()} Human ID: {human.SubjectId}");
                     }
                 }
 
@@ -180,7 +180,7 @@ namespace LittleDatabaseApp
                 {
                     foreach (Android android in androidRepository.GetAll())
                     {
-                        Console.WriteLine(android.ToString());
+                        Console.WriteLine($"{android.ToString()} Android ID: {android.SubjectId}");
                     }
                 }
                 Console.WriteLine("\nThat's all");
