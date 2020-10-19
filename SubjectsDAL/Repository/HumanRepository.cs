@@ -2,7 +2,7 @@
 
 namespace SubjectsDAL.Repository
 {
-    public class HumanRepository : BaseRepository<Human>, IRepo<Human>
+    public class HumanRepository : BaseRepository<Human>, IRepository<Human>
     {
         public HumanRepository()
         {

@@ -2,7 +2,7 @@
 
 namespace SubjectsDAL.Repository
 {
-    public class AndroidRepository: BaseRepository<Android>, IRepo<Android>
+    public class AndroidRepository: BaseRepository<Android>, IRepository<Android>
     {
         public AndroidRepository()
         {

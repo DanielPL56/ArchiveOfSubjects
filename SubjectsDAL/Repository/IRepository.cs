@@ -2,7 +2,7 @@
 
 namespace SubjectsDAL.Repository
 {
-    public interface IRepo<T>
+    public interface IRepository<T>
     {
         int Add(T entity);
         int AddRange(List<T> entities);
