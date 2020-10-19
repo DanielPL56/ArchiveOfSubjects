@@ -1,11 +1,7 @@
 ﻿using System;
 using SubjectsDAL.EF;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SubjectsDAL.Repos;
+using SubjectsDAL.Repository;
 
 namespace TestingDAL
 {
@@ -15,15 +11,15 @@ namespace TestingDAL
         {
             Database.SetInitializer(new DataInitializer());
 
-            using (HumanRepo repository = new HumanRepo())
+            using (var humanRepository = new HumanRepository())
             {
-                foreach (var human in repository.GetAll())
+                foreach (var human in humanRepository.GetAll())
                 {
                     Console.WriteLine(human.ToString());
                 }
             }
 
-            using (AndroidRepo androidRepository = new AndroidRepo())
+            using (var androidRepository = new AndroidRepository())
             {
                 foreach (var android in androidRepository.GetAll())
                 {

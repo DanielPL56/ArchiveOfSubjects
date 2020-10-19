@@ -1,9 +1,7 @@
 namespace SubjectsDAL.EF
 {
     using SubjectsDAL.Models;
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class SubjectEntities : DbContext
     {

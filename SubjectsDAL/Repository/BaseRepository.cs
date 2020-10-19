@@ -2,13 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SubjectsDAL.Repos
+namespace SubjectsDAL.Repository
 {
-    public abstract class BaseRepo<T> : IDisposable where T:class
+    public abstract class BaseRepository<T> : IDisposable where T:class
     {
         public SubjectEntities context { get; } = new SubjectEntities();
 
@@ -43,7 +42,7 @@ namespace SubjectsDAL.Repos
             }
         }
 
-        public T GetOne(int? id) => table.Find(id);
+        public T GetOne(int id) => table.Find(id);
 
         public List<T> GetAll() => table.ToList();
 
@@ -61,13 +60,13 @@ namespace SubjectsDAL.Repos
 
         public int Delete(T entity)
         {
-            context.Entry(entity).State = EntityState.Deleted;
+            table.Remove(entity);
             return SaveChanges();
         }
 
         public int Save(T entity)
         {
-            context.Entry(entity).State = EntityState.Modified;
+            table.AddOrUpdate(entity);
             return SaveChanges();
         }
     }
